@@ -1,0 +1,23 @@
+plugins {
+    alias(core.plugins.convention.publish)
+    alias(crestfi.plugins.kmp.library)
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.addAll(
+            listOf<String>(
+
+            ).map { "-opt-in=$it" }
+        )
+    }
+
+    sourceSets {
+        commonMain.dependencies {
+        }
+        androidMain.dependencies {
+        }
+        iosMain.dependencies {
+        }
+    }
+}

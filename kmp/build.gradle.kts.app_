@@ -1,0 +1,108 @@
+import com.android.build.gradle.internal.api.BaseVariantOutputImpl
+import com.android.build.gradle.internal.tasks.FinalizeBundleTask
+import com.google.firebase.appdistribution.gradle.firebaseAppDistribution
+import org.gradle.internal.extensions.stdlib.capitalized
+
+plugins {
+    alias(crestfi.plugins.kmp.application)
+}
+
+val vMajor = 0
+val vMinor = 0
+val vPatch = 1
+val vBuild = 0
+val vCode = vMajor * 100000 + vMinor * 1000 + vPatch * 10 + vBuild
+val vName = "$vMajor.$vMinor.$vPatch"
+val projectNamespace = "######"
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.addAll(
+            listOf<String>(
+
+            ).map { "-opt-in=$it" }
+        )
+    }
+
+    listOf(
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach {
+        it.binaries.framework {
+            export(libs.nsexceptionkt.core)
+            export(libs.crestfi.kmp.shared)
+            export(libs.crestfi.kmp.compose)
+//            transitiveExport = true
+            baseName = "ComposeApp"
+            isStatic = true
+            binaryOption("bundleId", "$projectNamespace.$baseName")
+            binaryOption("bundleShortVersionString", vName)
+            binaryOption("bundleVersion", "$vCode")
+        }
+    }
+
+    sourceSets {
+        commonMain.dependencies {
+            // 'api' - export binary framework
+            api(libs.crestfi.kmp.compose)
+        }
+        androidMain.dependencies {
+        }
+    }
+}
+
+kotlin {
+    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
+        binaries.all {
+            freeCompilerArgs += "-Xdisable-phases=EscapeAnalysis"
+        }
+    }
+}
+
+composeFlattenDrawableResource {
+    inputDir = "../GraphicResources/Compose"
+}
+
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "generated.resources"
+    generateResClass = always
+}
+
+// platform
+
+android {
+    namespace = projectNamespace.lowercase()
+    defaultConfig {
+        applicationId = namespace
+        versionCode = vCode
+        versionName = vName
+    }
+
+    buildTypes {
+        firebaseAppDistribution {
+            artifactType = "APK"
+            groups = "owner, public-link"
+            releaseNotes = "v$vName, c$vCode."
+        }
+    }
+
+    applicationVariants.all {
+        val variant = this
+        val fileName = listOf(
+            rootProject.name,
+            "${variant.name}",
+            "v${versionName}",
+            "c${versionCode}",
+        ).joinToString("-")
+
+        outputs.all {
+            (this as BaseVariantOutputImpl).outputFileName = "$fileName.apk"
+        }
+        tasks.named<FinalizeBundleTask>("sign${name.capitalized()}Bundle") {
+            finalBundleFile.apply {
+                set(File(asFile.get().parentFile, "$fileName.aab"))
+            }
+        }
+    }
+}

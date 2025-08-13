@@ -1,0 +1,16 @@
+plugins {
+    alias(core.plugins.kotlin.multiplatform) apply false
+    alias(core.plugins.kotlin.serialization) apply false
+    alias(core.plugins.compose) apply false
+    alias(core.plugins.compose.compiler) apply false
+    //
+    alias(core.plugins.ksp) apply false
+    alias(core.plugins.wire) apply false
+    alias(core.plugins.room) apply false
+    //
+    alias(core.plugins.gms.googleServices) apply false
+    alias(core.plugins.firebase.appDistribution) apply false
+    alias(core.plugins.firebase.crashlytics) apply false
+    alias(core.plugins.android.application) apply false
+    alias(core.plugins.android.library) apply false
+}

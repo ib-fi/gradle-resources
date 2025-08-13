@@ -1,0 +1,178 @@
+# 25.08.09
+
+[versions]
+### KMP
+# https://github.com/JetBrains/compose-multiplatform
+compose = "1.8.2"
+compose-lifecycle = "2.9.1" # based: 2.9.1 # https://developer.android.com/jetpack/androidx/releases/lifecycle
+compose-adaptive = "1.1.2" # based: 1.1.2 # https://developer.android.com/jetpack/androidx/releases/compose-material3-adaptive
+compose-navigation = "2.9.0-beta03" # based: 2.9.0 # https://developer.android.com/jetpack/androidx/releases/navigation
+compose-savedstate = "1.3.1" # based: 1.3.0 # https://developer.android.com/jetpack/androidx/releases/savedstate
+compose-window = "1.4.0-alpha09" # based: 1.4.0-alpha04 # https://developer.android.com/jetpack/androidx/releases/window
+# https://mvnrepository.com/artifact/org.jetbrains.compose.material/material-navigation
+# https://github.com/JetBrains/compose-multiplatform-core/pull/1504
+compose-material-navigation = "1.8.0-beta04"
+compose-haze = "1.6.9" # https://github.com/chrisbanes/haze
+kotlinx-datetime = "0.7.1" # https://github.com/Kotlin/kotlinx-datetime
+kotlinx-serialization = "1.9.0" # https://github.com/Kotlin/kotlinx.serialization
+kotlinx-collections-immutable = "0.4.0" # https://github.com/Kotlin/kotlinx.collections.immutable
+datastore = "1.1.7" # https://developer.android.com/jetpack/androidx/releases/datastore
+ktor = "3.2.3" # https://github.com/ktorio/ktor
+coil = "3.3.0" # https://github.com/coil-kt/coil
+crashkios = "0.9.0" # https://github.com/touchlab/CrashKiOS
+kermit = "2.0.5" # https://github.com/touchlab/Kermit
+nsexceptionkt = "1.0.2" # https://github.com/rickclephas/NSExceptionKt
+### Android
+# https://github.com/androidx/androidx
+# https://developer.android.com/jetpack/androidx/versions
+androidx-core = "1.16.0" # https://developer.android.com/jetpack/androidx/releases/core
+androidx-activity = "1.10.1" # https://developer.android.com/jetpack/androidx/releases/activity
+androidx-media3 = "1.8.0" # https://developer.android.com/jetpack/androidx/releases/media3
+### iOS
+### Others
+
+
+[libraries]
+### KMP
+compose-adaptive = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive", version.ref = "compose-adaptive" }
+compose-adaptive-layout = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-layout", version.ref = "compose-adaptive" }
+compose-adaptive-navigation = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-navigation", version.ref = "compose-adaptive" }
+compose-lifecycle = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "compose-lifecycle" }
+compose-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "compose-lifecycle" }
+compose-navigation = { group = "org.jetbrains.androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
+compose-savedstate = { group = "org.jetbrains.androidx.savedstate", name = "savedstate", version.ref = "compose-savedstate" }
+compose-window = { group = "org.jetbrains.androidx.window", name = "window-core", version.ref = "compose-window" }
+compose-material-navigation = { group = "org.jetbrains.compose.material", name = "material-navigation", version.ref = "compose-material-navigation" }
+compose-material3-windowsize = { group = "org.jetbrains.compose.material3", name = "material3-window-size-class", version.ref = "compose" }
+compose-haze = { group = "dev.chrisbanes.haze", name = "haze", version.ref = "compose-haze" }
+compose-haze-materials = { group = "dev.chrisbanes.haze", name = "haze-materials", version.ref = "compose-haze" }
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-protobuf = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-cbor = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-cbor", version.ref = "kotlinx-serialization" }
+kotlinx-collections-immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinx-collections-immutable" }
+datastore = { group = "androidx.datastore", name = "datastore-core", version.ref = "datastore" }
+datastore-okio = { group = "androidx.datastore", name = "datastore-core-okio", version.ref = "datastore" }
+datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" }
+ktor-bom = { group = "io.ktor", name = "ktor-bom", version.ref = "ktor" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio" }
+ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp" }
+ktor-client-android = { group = "io.ktor", name = "ktor-client-android" }
+ktor-client-drawain = { group = "io.ktor", name = "ktor-client-darwin" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation" }
+ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json" }
+ktor-serialization-kotlinx-protobuf = { group = "io.ktor", name = "ktor-serialization-kotlinx-protobuf" }
+ktor-serialization-kotlinx-cbor = { group = "io.ktor", name = "ktor-serialization-kotlinx-cbor" }
+ktor-server-core = { group = "io.ktor", name = "ktor-server-core-jvm" }
+ktor-server-netty = { group = "io.ktor", name = "ktor-server-netty-jvm" }
+ktor-server-tests = { group = "io.ktor", name = "ktor-server-tests-jvm" }
+coil-bom = { group = "io.coil-kt.coil3", name = "coil-bom", version.ref = "coil" }
+coil = { group = "io.coil-kt.coil3", name = "coil" }
+coil-core = { group = "io.coil-kt.coil3", name = "coil-core" }
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose" }
+coil-compose-core = { group = "io.coil-kt.coil3", name = "coil-compose-core" }
+coil-network-cache-control = { group = "io.coil-kt.coil3", name = "coil-network-cache-control" }
+coil-network-ktor = { group = "io.coil-kt.coil3", name = "coil-network-ktor3" }
+coil-svg = { group = "io.coil-kt.coil3", name = "coil-svg" }
+coil-gif = { group = "io.coil-kt.coil3", name = "coil-gif" }
+coil-video = { group = "io.coil-kt.coil3", name = "coil-video" }
+coil-test = { group = "io.coil-kt.coil3", name = "coil-test" }
+### Android
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
+androidx-activity = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidx-activity" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
+# + media3 - https://developer.android.com/jetpack/androidx/releases/media3
+androidx-media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "androidx-media3" }
+androidx-media3-exoplayer-dash = { group = "androidx.media3", name = "media3-exoplayer-dash", version.ref = "androidx-media3" }
+androidx-media3-exoplayer-hls = { group = "androidx.media3", name = "media3-exoplayer-hls", version.ref = "androidx-media3" }
+androidx-media3-exoplayer-smoothstreaming = { group = "androidx.media3", name = "media3-exoplayer-smoothstreaming", version.ref = "androidx-media3" }
+androidx-media3-exoplayer-rtsp = { group = "androidx.media3", name = "media3-exoplayer-rtsp", version.ref = "androidx-media3" }
+androidx-media3-exoplayer-midi = { group = "androidx.media3", name = "media3-exoplayer-midi", version.ref = "androidx-media3" }
+androidx-media3-exoplayer-ima = { group = "androidx.media3", name = "media3-exoplayer-ima", version.ref = "androidx-media3" }
+androidx-media3-datasource-cronet = { group = "androidx.media3", name = "media3-datasource-cronet", version.ref = "androidx-media3" }
+androidx-media3-ui = { group = "androidx.media3", name = "media3-ui", version.ref = "androidx-media3" }
+androidx-media3-ui-compose = { group = "androidx.media3", name = "media3-ui-compose", version.ref = "androidx-media3" }
+androidx-media3-ui-leanback = { group = "androidx.media3", name = "media3-ui-leanback", version.ref = "androidx-media3" }
+androidx-media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "androidx-media3" }
+androidx-media3-extractor = { group = "androidx.media3", name = "media3-extractor", version.ref = "androidx-media3" }
+androidx-media3-cast = { group = "androidx.media3", name = "media3-cast", version.ref = "androidx-media3" }
+androidx-media3-exoplayer-workmanager = { group = "androidx.media3", name = "media3-exoplayer-workmanager", version.ref = "androidx-media3" }
+androidx-media3-transformer = { group = "androidx.media3", name = "media3-transformer", version.ref = "androidx-media3" }
+androidx-media3-effect = { group = "androidx-media3", name = "media3-effect", version.ref = "androidx-media3" }
+androidx-media3-muxer = { group = "androidx-media3", name = "media3-muxer", version.ref = "androidx-media3" }
+androidx-media3-test-utils = { group = "androidx-media3", name = "media3-test-utils", version.ref = "androidx-media3" }
+androidx-media3-test-utils-robolectric = { group = "androidx-media3", name = "media3-test-utils-robolectric", version.ref = "androidx-media3" }
+androidx-media3-container = { group = "androidx-media3", name = "media3-container", version.ref = "androidx-media3" }
+androidx-media3-database = { group = "androidx-media3", name = "media3-database", version.ref = "androidx-media3" }
+androidx-media3-decoder = { group = "androidx-media3", name = "media3-decoder", version.ref = "androidx-media3" }
+androidx-media3-datasource = { group = "androidx-media3", name = "media3-datasource", version.ref = "androidx-media3" }
+androidx-media3-common = { group = "androidx-media3", name = "media3-common", version.ref = "androidx-media3" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+firebase-cloud-messaging = { group = "com.google.firebase", name = "firebase-messaging-ktx" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
+firebase-crashlytics-ndk = { group = "com.google.firebase", name = "firebase-crashlytics-ndk" }
+firebase-performance = { group = "com.google.firebase", name = "firebase-perf-ktx" }
+### iOS
+nsexceptionkt-core = { group = "com.rickclephas.kmp", name = "nsexception-kt-core", version.ref = "nsexceptionkt" }
+nsexceptionkt-crashlytics = { group = "com.rickclephas.kmp", name = "nsexception-kt-crashlytics", version.ref = "nsexceptionkt" }
+### Others
+
+
+[bundles]
+### KMP
+compose = [
+    "compose-adaptive", "compose-adaptive-layout", "compose-adaptive-navigation",
+    "compose-lifecycle", "compose-lifecycle-viewmodel",
+    "compose-navigation", #"compose-material-navigation",
+    "compose-savedstate",
+    "compose-window", "compose-material3-windowsize",
+    #
+    "compose-haze", "compose-haze-materials",
+]
+kotlinx = [
+    "kotlinx-datetime",
+    "kotlinx-collections-immutable",
+]
+datastore = ["datastore", "datastore-okio", "datastore-preferences"]
+ktor = [
+    "ktor-client-core",
+    "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json", "ktor-serialization-kotlinx-protobuf",
+    "ktor-client-logging",
+]
+ktor-android = [
+    "ktor-client-okhttp",
+]
+ktor-ios = [
+    "ktor-client-drawain",
+]
+coil = [
+    "coil",
+    "coil-network-cache-control", "coil-network-ktor",
+]
+coil-compose = [
+    "coil-compose",
+    "coil-network-cache-control", "coil-network-ktor",
+]
+### Android
+androidx-compose = [
+    "androidx-activity-compose",
+]
+androidx-media = [
+    "androidx-media3-exoplayer",
+]
+androidx-media-ui = [
+    "androidx-media3-ui-compose",
+]
+firebase-crashlytics = ["firebase-crashlytics", "firebase-crashlytics-ndk"]
+### iOS
+nsexceptionkt = [
+    "nsexceptionkt-core"
+]
+### Others
+
+
+[plugins]
+
