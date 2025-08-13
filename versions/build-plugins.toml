@@ -1,0 +1,65 @@
+# 25.11.22
+
+[versions]
+### buildSrc
+gradle-publish = "2.0.0"
+# https://kotlinlang.org/docs/releases.html
+# https://github.com/JetBrains/kotlin
+kotlin = "2.3.0-RC3"
+kotlin-compile = "2.3"
+kotlin-jvmToolchain = "21"
+### KMP
+### Android
+### iOS
+### Others
+ksp = "2.3.3" # https://github.com/google/ksp
+wire = "5.4.0" # https://github.com/square/wire
+spotless = "8.1.0" # https://github.com/diffplug/spotless
+dokka = "2.1.0" # https://github.com/Kotlin/dokka
+binaryCompatibility = "0.18.1" # https://github.com/Kotlin/binary-compatibility-validator
+publish = "0.35.0" # https://github.com/vanniktech/gradle-maven-publish-plugin
+
+
+[libraries]
+### buildSrc
+gradlePlugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+gradlePlugin-kotlin-api = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin-api", version.ref = "kotlin" }
+### KMP
+gradlePlugin-compose-compiler = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
+### Android
+### iOS
+### Others
+gradlePlugin-ksp = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+gradlePlugin-wire = { group = "com.squareup.wire", name = "wire-gradle-plugin", version.ref = "wire" }
+
+
+[bundles]
+### buildSrc
+### KMP
+### Android
+### iOS
+### Others
+
+
+[plugins]
+### buildSrc
+gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradle-publish" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+convention-jvmToolchain = { id = "convention.jvmToolchain" }
+convention-publish = { id = "convention.publish" }
+### KMP
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+### Android
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+### iOS
+#kotlin-cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+### Others
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+wire = { id = "com.squareup.wire", version.ref = "wire" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+binaryCompatibility = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binaryCompatibility" }
+publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
+

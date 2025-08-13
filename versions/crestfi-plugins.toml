@@ -1,0 +1,31 @@
+# 25.11.22
+
+[versions]
+kmp-gradle = "0.1.0"
+
+
+[libraries]
+
+
+[bundles]
+
+
+[plugins]
+kmp-app-config = { id = "pro.crestfi.kmp.gradle.app-config", version.ref = "kmp-gradle" }
+kmp-compose-application = { id = "pro.crestfi.kmp.gradle.compose-application", version.ref = "kmp-gradle" }
+kmp-compose-library = { id = "pro.crestfi.kmp.gradle.compose-library", version.ref = "kmp-gradle" }
+kmp-library = { id = "pro.crestfi.kmp.gradle.library", version.ref = "kmp-gradle" }
+#
+kmp-framework = { id = "pro.crestfi.kmp.gradle.framework", version.ref = "kmp-gradle" }
+kmp-compose = { id = "pro.crestfi.kmp.gradle.compose", version.ref = "kmp-gradle" }
+kmp-compose-preview = { id = "pro.crestfi.kmp.gradle.compose-preview", version.ref = "kmp-gradle" }
+kmp-compose-flattenDrawableResource = { id = "pro.crestfi.kmp.gradle.compose-flatten-drawable-resource", version.ref = "kmp-gradle" }
+kmp-ksp = { id = "pro.crestfi.kmp.gradle.ksp", version.ref = "kmp-gradle" }
+kmp-wire = { id = "pro.crestfi.kmp.gradle.wire", version.ref = "kmp-gradle" }
+kmp-room = { id = "pro.crestfi.kmp.gradle.room", version.ref = "kmp-gradle" }
+kmp-android-application = { id = "pro.crestfi.kmp.gradle.android-application", version.ref = "kmp-gradle" }
+kmp-android-library = { id = "pro.crestfi.kmp.gradle.android-library", version.ref = "kmp-gradle" }
+kmp-firebase = { id = "pro.crestfi.kmp.gradle.firebase", version.ref = "kmp-gradle" }
+kmp-ios-library = { id = "pro.crestfi.kmp.gradle.ios-library", version.ref = "kmp-gradle" }
+kmp-publish = { id = "pro.crestfi.kmp.gradle.publish", version.ref = "kmp-gradle" }
+

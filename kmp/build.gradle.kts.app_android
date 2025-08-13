@@ -1,0 +1,19 @@
+import com.google.firebase.appdistribution.gradle.firebaseAppDistribution
+
+plugins {
+    alias(crestfi.plugins.kmp.android.application)
+}
+
+dependencies {
+    implementation(projects.composeApp)
+}
+
+android {
+    buildTypes {
+        firebaseAppDistribution {
+            artifactType = "AAB"
+            groups = "owner, public-link"
+            releaseNotes = with(appConfig) { "v$versionName, c$versionCode." }
+        }
+    }
+}

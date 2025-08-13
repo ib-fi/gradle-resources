@@ -1,0 +1,22 @@
+plugins {
+    alias(core.plugins.kotlin.multiplatform) apply false
+    alias(core.plugins.kotlin.serialization) apply false
+    alias(core.plugins.ksp) apply false
+    alias(core.plugins.wire) apply false
+    alias(core.plugins.compose.compiler) apply false
+    //
+    alias(core.plugins.kotlin.parcelize) apply false
+    //
+    alias(kmp.plugins.compose) apply false
+    alias(kmp.plugins.room) apply false
+    //
+    alias(kmpAndroid.plugins.application) apply false
+    alias(kmpAndroid.plugins.library) apply false
+    alias(kmpAndroid.plugins.gms.googleServices) apply false
+    alias(kmpAndroid.plugins.firebase.appDistribution) apply false
+    alias(kmpAndroid.plugins.firebase.crashlytics) apply false
+}
+
+allprojects {
+    apply(plugin = "project-report")
+}

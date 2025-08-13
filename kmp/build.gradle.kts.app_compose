@@ -1,0 +1,48 @@
+import pro.crestfi.gradle.bom
+import pro.crestfi.kmp.xcFramework
+
+plugins {
+    alias(crestfi.plugins.kmp.compose.application)
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.addAll(
+            listOf<String>().map { "-opt-in=$it" }
+        )
+    }
+
+    xcFramework {
+        export(kmpIos.nsexceptionkt.core)
+        export(kmpApp.crestfi.kmp.shared)
+    }
+
+    sourceSets {
+        commonMain.dependencies {
+            // 'api' - export binary framework
+            api(libs.crestfi.kmp.compose)
+        }
+        androidMain.dependencies {
+        }
+        iosMain.dependencies {
+        }
+    }
+}
+
+kotlin {
+    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
+        binaries.all {
+            freeCompilerArgs += "-Xdisable-phases=EscapeAnalysis"
+        }
+    }
+}
+
+composeFlattenDrawableResource {
+    inputDir = "../GraphicResources/Compose"
+}
+
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "generated.resources"
+    generateResClass = always
+}
