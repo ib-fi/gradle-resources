@@ -1,0 +1,83 @@
+# 25.08.09
+
+[versions]
+### buildSrc
+gradle-publish = "1.3.1"
+# https://kotlinlang.org/docs/releases.html
+# https://github.com/JetBrains/kotlin
+kotlin = "2.2.0"
+kotlin-jvmToolchain = "21"
+### KMP
+compose = "1.8.2" # https://github.com/JetBrains/compose-multiplatform
+ksp = "2.2.0-2.0.2" # "$kotlin-$version" - https://github.com/google/ksp
+wire = "5.3.8" # https://github.com/square/wire
+room = "2.7.2" # https://developer.android.com/jetpack/androidx/releases/room
+sqlite = "2.5.2" # https://developer.android.com/jetpack/androidx/releases/sqlite
+### Android
+gms-googleServices = "4.4.3" # https://developers.google.com/android/guides/google-services-plugin
+firebase-appDistribution = "5.1.1" # https://firebase.google.com/docs/app-distribution/android/distribute-gradle
+firebase-crashlytics = "3.0.6" # https://firebase.google.com/docs/crashlytics/get-started?platform=android
+android-gradlePlugin = "8.11.1" # https://developer.android.com/reference/tools/gradle-api
+android-tools = "31.12.0" # https://mvnrepository.com/artifact/com.android.tools/sdk-common
+android-compileSdk = "36"
+android-compileSdkExt = "18" # Num or '-'
+android-minSdk = "29"
+android-targetSdk = "36"
+firebase-bom = "33.16.0" # https://firebase.google.com/support/release-notes/android
+### iOS
+### Others
+
+
+[libraries]
+### buildSrc
+gradlePlugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+### KMP
+gradlePlugin-compose = { group = "org.jetbrains.compose", name = "compose-gradle-plugin", version.ref = "compose" }
+gradlePlugin-compose-compiler = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
+gradlePlugin-ksp = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+gradlePlugin-wire = { group = "com.squareup.wire", name = "wire-gradle-plugin", version.ref = "wire" }
+gradlePlugin-room = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+room = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+sqlite = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "sqlite" }
+### Android
+gradlePlugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "android-gradlePlugin" }
+gradlePlugin-android-tools = { group = "com.android.tools", name = "sdk-common", version.ref = "android-tools" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+### iOS
+### Others
+
+
+[bundles]
+### buildSrc
+### KMP
+room = ["room", "sqlite"]
+### Android
+### iOS
+### Others
+
+
+[plugins]
+### buildSrc
+gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradle-publish" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+convention-jvmToolchain = { id = "convention.jvmToolchain" }
+convention-publish = { id = "convention.publish" }
+### KMP
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+wire = { id = "com.squareup.wire", version.ref = "wire" }
+room = { id = "androidx.room", version.ref = "room" }
+### Android
+android-application = { id = "com.android.application", version.ref = "android-gradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "android-gradlePlugin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+gms-googleServices = { id = "com.google.gms.google-services", version.ref = "gms-googleServices" }
+firebase-appDistribution = { id = "com.google.firebase.appdistribution", version.ref = "firebase-appDistribution" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics" }
+### iOS
+### Others
+
