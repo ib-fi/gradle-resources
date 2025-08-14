@@ -1,31 +1,34 @@
-# 25.08.09
+# 25.08.15
+# https://repo.maven.apache.org/maven2/org/jetbrains/
+# https://maven.google.com/web/index.html#androidx.compose
+# ./gradlew compose:dependencies --configuration allSourceSetsCompileDependenciesMetadata > report.txt
 
 [versions]
 ### KMP
 # https://github.com/JetBrains/compose-multiplatform
-compose = "1.8.2"
-compose-lifecycle = "2.9.1" # based: 2.9.1 # https://developer.android.com/jetpack/androidx/releases/lifecycle
-compose-adaptive = "1.1.2" # based: 1.1.2 # https://developer.android.com/jetpack/androidx/releases/compose-material3-adaptive
-compose-navigation = "2.9.0-beta03" # based: 2.9.0 # https://developer.android.com/jetpack/androidx/releases/navigation
-compose-savedstate = "1.3.1" # based: 1.3.0 # https://developer.android.com/jetpack/androidx/releases/savedstate
-compose-window = "1.4.0-alpha09" # based: 1.4.0-alpha04 # https://developer.android.com/jetpack/androidx/releases/window
-# https://mvnrepository.com/artifact/org.jetbrains.compose.material/material-navigation
-# https://github.com/JetBrains/compose-multiplatform-core/pull/1504
-compose-material-navigation = "1.8.0-beta04"
+compose-material3 = "1.9.0-beta03" # based: 1.4.0-beta01 # https://developer.android.com/jetpack/androidx/releases/compose-material3
+compose-material3-adaptive = "1.2.0-alpha05" # based: 1.2.0-alpha10 # https://developer.android.com/jetpack/androidx/releases/compose-material3-adaptive
+compose-graphics = "1.0.0-alpha09" # based: 1.0.1 # https://developer.android.com/jetpack/androidx/releases/graphics
+compose-lifecycle = "2.9.2" # based: 2.9.2 # https://developer.android.com/jetpack/androidx/releases/lifecycle
+compose-navigation = "2.9.0-beta05" # based: 2.9.2 # https://developer.android.com/jetpack/androidx/releases/navigation
+compose-savedstate = "1.3.2" # based: 1.3.1 # https://developer.android.com/jetpack/androidx/releases/savedstate
+compose-window = "1.4.0-beta01" # based: 1.4.0 # https://developer.android.com/jetpack/androidx/releases/window
 compose-haze = "1.6.9" # https://github.com/chrisbanes/haze
+molecule = "2.1.0" # https://github.com/cashapp/molecule
 kotlinx-datetime = "0.7.1" # https://github.com/Kotlin/kotlinx-datetime
 kotlinx-serialization = "1.9.0" # https://github.com/Kotlin/kotlinx.serialization
 kotlinx-collections-immutable = "0.4.0" # https://github.com/Kotlin/kotlinx.collections.immutable
 datastore = "1.1.7" # https://developer.android.com/jetpack/androidx/releases/datastore
 ktor = "3.2.3" # https://github.com/ktorio/ktor
 coil = "3.3.0" # https://github.com/coil-kt/coil
+sketch = "4.4.0-alpha01" # https://github.com/panpf/sketch
 crashkios = "0.9.0" # https://github.com/touchlab/CrashKiOS
 kermit = "2.0.5" # https://github.com/touchlab/Kermit
 nsexceptionkt = "1.0.2" # https://github.com/rickclephas/NSExceptionKt
 ### Android
 # https://github.com/androidx/androidx
 # https://developer.android.com/jetpack/androidx/versions
-androidx-core = "1.16.0" # https://developer.android.com/jetpack/androidx/releases/core
+androidx-core = "1.17.0" # https://developer.android.com/jetpack/androidx/releases/core
 androidx-activity = "1.10.1" # https://developer.android.com/jetpack/androidx/releases/activity
 androidx-media3 = "1.8.0" # https://developer.android.com/jetpack/androidx/releases/media3
 ### iOS
@@ -34,18 +37,21 @@ androidx-media3 = "1.8.0" # https://developer.android.com/jetpack/androidx/relea
 
 [libraries]
 ### KMP
-compose-adaptive = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive", version.ref = "compose-adaptive" }
-compose-adaptive-layout = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-layout", version.ref = "compose-adaptive" }
-compose-adaptive-navigation = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-navigation", version.ref = "compose-adaptive" }
+compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "compose-material3" }
+compose-material3-adaptive-navigation-suite = { group = "org.jetbrains.compose.material3", name = "material3-adaptive-navigation-suite", version.ref = "compose-material3" }
+compose-material3-adaptive = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive", version.ref = "compose-material3-adaptive" }
+compose-material3-adaptive-layout = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-layout", version.ref = "compose-material3-adaptive" }
+compose-material3-adaptive-navigation = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive-navigation", version.ref = "compose-material3-adaptive" }
+compose-graphics = { group = "org.jetbrains.androidx.graphics", name = "graphics-shapes", version.ref = "compose-graphics" }
 compose-lifecycle = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "compose-lifecycle" }
 compose-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "compose-lifecycle" }
+compose-lifecycle-viewmodel-savedstate = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "compose-lifecycle" }
 compose-navigation = { group = "org.jetbrains.androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
-compose-savedstate = { group = "org.jetbrains.androidx.savedstate", name = "savedstate", version.ref = "compose-savedstate" }
+compose-savedstate = { group = "org.jetbrains.androidx.savedstate", name = "savedstate-compose", version.ref = "compose-savedstate" }
 compose-window = { group = "org.jetbrains.androidx.window", name = "window-core", version.ref = "compose-window" }
-compose-material-navigation = { group = "org.jetbrains.compose.material", name = "material-navigation", version.ref = "compose-material-navigation" }
-compose-material3-windowsize = { group = "org.jetbrains.compose.material3", name = "material3-window-size-class", version.ref = "compose" }
 compose-haze = { group = "dev.chrisbanes.haze", name = "haze", version.ref = "compose-haze" }
 compose-haze-materials = { group = "dev.chrisbanes.haze", name = "haze-materials", version.ref = "compose-haze" }
+molecule = { group = "app.cash.molecule", name = "molecule-runtime", version.ref = "molecule" }
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 kotlinx-serialization-protobuf = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
@@ -74,11 +80,22 @@ coil-core = { group = "io.coil-kt.coil3", name = "coil-core" }
 coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose" }
 coil-compose-core = { group = "io.coil-kt.coil3", name = "coil-compose-core" }
 coil-network-cache-control = { group = "io.coil-kt.coil3", name = "coil-network-cache-control" }
-coil-network-ktor = { group = "io.coil-kt.coil3", name = "coil-network-ktor3" }
+coil-network-ktor3 = { group = "io.coil-kt.coil3", name = "coil-network-ktor3" }
 coil-svg = { group = "io.coil-kt.coil3", name = "coil-svg" }
 coil-gif = { group = "io.coil-kt.coil3", name = "coil-gif" }
 coil-video = { group = "io.coil-kt.coil3", name = "coil-video" }
 coil-test = { group = "io.coil-kt.coil3", name = "coil-test" }
+sketch = { group = "io.github.panpf.sketch4", name = "sketch-singleton", version.ref = "sketch" }
+sketch-compose = { group = "io.github.panpf.sketch4", name = "sketch-compose", version.ref = "sketch" }
+sketch-compose-extensions = { group = "io.github.panpf.sketch4", name = "sketch-extensions-compose", version.ref = "sketch" }
+sketch-compose-resources = { group = "io.github.panpf.sketch4", name = "sketch-extensions-compose-resources", version.ref = "sketch" }
+sketch-http-ktor3 = { group = "io.github.panpf.sketch4", name = "sketch-http-ktor3", version.ref = "sketch" }
+sketch-blurhash = { group = "io.github.panpf.sketch4", name = "sketch-blurhash", version.ref = "sketch" }
+sketch-svg = { group = "io.github.panpf.sketch4", name = "sketch-svg", version.ref = "sketch" }
+sketch-gif = { group = "io.github.panpf.sketch4", name = "sketch-animated-gif", version.ref = "sketch" }
+sketch-webp = { group = "io.github.panpf.sketch4", name = "sketch-animated-webp", version.ref = "sketch" }
+sketch-video-android = { group = "io.github.panpf.sketch4", name = "sketch-video", version.ref = "sketch" }
+sketch-video-ffmpeg-android = { group = "io.github.panpf.sketch4", name = "sketch-video-ffmpeg", version.ref = "sketch" }
 ### Android
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
 androidx-activity = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidx-activity" }
@@ -109,12 +126,12 @@ androidx-media3-database = { group = "androidx-media3", name = "media3-database"
 androidx-media3-decoder = { group = "androidx-media3", name = "media3-decoder", version.ref = "androidx-media3" }
 androidx-media3-datasource = { group = "androidx-media3", name = "media3-datasource", version.ref = "androidx-media3" }
 androidx-media3-common = { group = "androidx-media3", name = "media3-common", version.ref = "androidx-media3" }
-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
-firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
-firebase-cloud-messaging = { group = "com.google.firebase", name = "firebase-messaging-ktx" }
-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
+firebase-cloud-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 firebase-crashlytics-ndk = { group = "com.google.firebase", name = "firebase-crashlytics-ndk" }
-firebase-performance = { group = "com.google.firebase", name = "firebase-perf-ktx" }
+firebase-performance = { group = "com.google.firebase", name = "firebase-perf" }
 ### iOS
 nsexceptionkt-core = { group = "com.rickclephas.kmp", name = "nsexception-kt-core", version.ref = "nsexceptionkt" }
 nsexceptionkt-crashlytics = { group = "com.rickclephas.kmp", name = "nsexception-kt-crashlytics", version.ref = "nsexceptionkt" }
@@ -124,11 +141,12 @@ nsexceptionkt-crashlytics = { group = "com.rickclephas.kmp", name = "nsexception
 [bundles]
 ### KMP
 compose = [
-    "compose-adaptive", "compose-adaptive-layout", "compose-adaptive-navigation",
-    "compose-lifecycle", "compose-lifecycle-viewmodel",
-    "compose-navigation", #"compose-material-navigation",
+    "compose-material3", "compose-material3-adaptive-navigation-suite",
+    "compose-material3-adaptive", "compose-material3-adaptive-layout", "compose-material3-adaptive-navigation",
+    "compose-lifecycle", "compose-lifecycle-viewmodel", "compose-lifecycle-viewmodel-savedstate",
+    "compose-navigation",
     "compose-savedstate",
-    "compose-window", "compose-material3-windowsize",
+    "compose-window",
     #
     "compose-haze", "compose-haze-materials",
 ]
@@ -150,11 +168,21 @@ ktor-ios = [
 ]
 coil = [
     "coil",
-    "coil-network-cache-control", "coil-network-ktor",
+    "coil-network-cache-control", "coil-network-ktor3",
 ]
 coil-compose = [
     "coil-compose",
-    "coil-network-cache-control", "coil-network-ktor",
+    "coil-network-cache-control", "coil-network-ktor3",
+]
+sketch = [
+    "sketch",
+    "sketch-http-ktor3",
+    "sketch-blurhash",
+]
+sketch-compose = [
+    "sketch-compose", "sketch-compose-extensions", "sketch-compose-resources",
+    "sketch-http-ktor3",
+    "sketch-blurhash",
 ]
 ### Android
 androidx-compose = [
