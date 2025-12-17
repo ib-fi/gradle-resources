@@ -5,7 +5,7 @@
 gradle-publish = "2.0.0"
 # https://kotlinlang.org/docs/releases.html
 # https://github.com/JetBrains/kotlin
-kotlin = "2.3.0-RC3"
+kotlin = "2.3.0"
 kotlin-compile = "2.3"
 kotlin-jvmToolchain = "21"
 ### KMP
